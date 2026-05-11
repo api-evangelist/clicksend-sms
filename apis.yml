@@ -1,0 +1,73 @@
+aid: clicksend-sms
+name: ClickSend SMS
+description: >-
+  ClickSend is a global business communications platform for sending and
+  receiving SMS, MMS, voice, email, fax, and physical post via API or web
+  dashboard, with direct carrier routing and a 99.95% uptime SLA. The
+  ClickSend REST API v3 provides endpoints for SMS, MMS, voice, email, fax,
+  post letters, contacts, accounts, and webhooks, secured with HTTP Basic
+  Authentication using a username and API key.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - SMS
+  - MMS
+  - Messaging
+  - Voice
+  - Email
+  - Fax
+  - Direct Mail
+  - Communications
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/clicksend-sms/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: clicksend-sms:rest-api-v3
+    name: ClickSend REST API v3
+    description: >-
+      REST API v3 for ClickSend covering SMS, MMS, voice broadcasts, email,
+      fax, post letters and postcards, contact lists, accounts, subaccounts,
+      and webhook subscriptions. Authentication uses HTTP Basic Auth with
+      account username and API key. An OpenAPI/Swagger specification is
+      published in the official ClickSend SDK repositories on GitHub.
+    humanURL: https://developers.clicksend.com/docs/
+    baseURL: https://rest.clicksend.com/v3
+    tags:
+      - SMS
+      - MMS
+      - Voice
+      - Email
+      - Fax
+      - Post
+      - Contacts
+      - Basic Auth
+    properties:
+      - type: Documentation
+        url: https://developers.clicksend.com/docs/
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/ClickSend/clicksend-go/master/api/swagger.yaml
+      - type: API Portal
+        url: https://developers.clicksend.com/
+      - type: GitHub Organization
+        url: https://github.com/ClickSend
+
+common:
+  - type: Website
+    url: https://www.clicksend.com
+  - type: Documentation
+    url: https://developers.clicksend.com/
+  - type: Pricing
+    url: https://www.clicksend.com/en/pricing/
+  - type: Sign Up
+    url: https://dashboard.clicksend.com/signup
+  - type: Knowledge Base
+    url: https://help.clicksend.com
+  - type: Integrations
+    url: https://integrations.clicksend.com/
+  - type: Blog
+    url: https://blog.clicksend.com
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
