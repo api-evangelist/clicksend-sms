@@ -54,6 +54,8 @@ apis:
         url: https://github.com/ClickSend
 
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/clicksend
   - type: Website
     url: https://www.clicksend.com
   - type: Documentation
