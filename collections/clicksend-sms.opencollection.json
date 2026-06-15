@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend SMS REST API v3",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Send SMS messages",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://rest.clicksend.com/v3/sms/send",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Send one or more SMS messages to recipients."
+    },
+    {
+      "info": {
+        "name": "Calculate SMS price",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://rest.clicksend.com/v3/sms/price",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Estimate the cost of sending one or more SMS messages."
+    },
+    {
+      "info": {
+        "name": "List delivery receipts",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://rest.clicksend.com/v3/sms/receipts",
+        "params": [
+          {
+            "name": "page",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List delivery receipts"
+    },
+    {
+      "info": {
+        "name": "Create a test delivery receipt",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://rest.clicksend.com/v3/sms/receipts",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a test delivery receipt"
+    },
+    {
+      "info": {
+        "name": "Get a single SMS receipt",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://rest.clicksend.com/v3/sms/receipts/:message_id",
+        "params": [
+          {
+            "name": "message_id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a single SMS receipt"
+    },
+    {
+      "info": {
+        "name": "Mark SMS receipts as read",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://rest.clicksend.com/v3/sms/receipts-read",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Mark SMS receipts as read"
+    },
+    {
+      "info": {
+        "name": "Create a test inbound SMS",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://rest.clicksend.com/v3/sms/",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Generate an inbound test message for webhook verification."
+    }
+  ],
+  "bundled": true
+}
