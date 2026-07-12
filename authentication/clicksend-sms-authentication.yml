@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/clicksend-sms-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Username and API key
+  sources:
+  - openapi/clicksend-sms-openapi.yml

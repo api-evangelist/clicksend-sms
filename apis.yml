@@ -54,6 +54,12 @@ apis:
         url: https://github.com/ClickSend
 
 common:
+  - type: TrustCenter
+    url: security/clicksend-sms-trust-center.yml
+  - type: DomainSecurity
+    url: security/clicksend-sms-domain-security.yml
+  - type: Authentication
+    url: authentication/clicksend-sms-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/clicksend
   - type: Website
