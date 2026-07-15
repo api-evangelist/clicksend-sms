@@ -54,6 +54,8 @@ apis:
         url: https://github.com/ClickSend
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/clicksend-sms-agentic-access.yml
   - type: TrustCenter
     url: security/clicksend-sms-trust-center.yml
   - type: DomainSecurity
