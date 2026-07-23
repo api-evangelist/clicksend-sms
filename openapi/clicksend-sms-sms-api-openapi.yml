@@ -1,21 +1,179 @@
 openapi: 3.1.0
 info:
-  title: ClickSend SMS REST API v3
-  description: |
-    ClickSend REST API v3 for sending SMS messages, calculating SMS pricing,
+  title: ClickSend REST API v3 Sms API
+  description: 'ClickSend REST API v3 for sending SMS messages, calculating SMS pricing,
+
     fetching delivery receipts, and simulating inbound and delivery webhooks.
+
     Authentication uses HTTP Basic Auth with your account username and API key.
-  version: "3.0.0"
+
+    '
+  version: 3.0.0
 servers:
-  - url: https://rest.clicksend.com/v3
-    description: ClickSend REST API v3
+- url: https://rest.clicksend.com/v3
+  description: ClickSend REST API v3
+security:
+- basicAuth: []
+tags:
+- name: Sms
+paths:
+  /sms/send:
+    post:
+      summary: Send SMS messages
+      description: Send one or more SMS messages to recipients.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SmsMessageCollection'
+      responses:
+        '200':
+          description: Messages accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '400':
+          description: Invalid request
+        '401':
+          description: Unauthorized
+      tags:
+      - Sms
+  /sms/price:
+    post:
+      summary: Calculate SMS price
+      description: Estimate the cost of sending one or more SMS messages.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SmsMessageCollection'
+      responses:
+        '200':
+          description: Pricing returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+      tags:
+      - Sms
+  /sms/receipts:
+    get:
+      summary: List delivery receipts
+      parameters:
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 15
+          minimum: 15
+          maximum: 100
+      responses:
+        '200':
+          description: Paginated delivery receipts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+      tags:
+      - Sms
+    post:
+      summary: Create a test delivery receipt
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Receipt'
+      responses:
+        '200':
+          description: Test receipt generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+      tags:
+      - Sms
+  /sms/receipts/{message_id}:
+    get:
+      summary: Get a single SMS receipt
+      parameters:
+      - name: message_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Single delivery receipt
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+      tags:
+      - Sms
+  /sms/receipts-read:
+    put:
+      summary: Mark SMS receipts as read
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date_before:
+                  type: integer
+                  description: Unix timestamp cutoff for bulk marking
+      responses:
+        '200':
+          description: Receipts marked read
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+      tags:
+      - Sms
+  /sms/:
+    post:
+      summary: Create a test inbound SMS
+      description: Generate an inbound test message for webhook verification.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from:
+                  type: string
+                to:
+                  type: string
+                body:
+                  type: string
+      responses:
+        '200':
+          description: Inbound test created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+      tags:
+      - Sms
 components:
-  securitySchemes:
-    basicAuth:
-      type: http
-      scheme: basic
-      description: Username and API key
   schemas:
+    Receipt:
+      type: object
+      properties:
+        url:
+          type: string
     SmsMessage:
       type: object
       properties:
@@ -53,11 +211,6 @@ components:
                 type: string
         shorten_urls:
           type: boolean
-    Receipt:
-      type: object
-      properties:
-        url:
-          type: string
     SuccessResponse:
       type: object
       properties:
@@ -69,142 +222,8 @@ components:
           type: string
         data:
           type: object
-security:
-  - basicAuth: []
-paths:
-  /sms/send:
-    post:
-      summary: Send SMS messages
-      description: Send one or more SMS messages to recipients.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SmsMessageCollection'
-      responses:
-        '200':
-          description: Messages accepted
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SuccessResponse'
-        '400':
-          description: Invalid request
-        '401':
-          description: Unauthorized
-  /sms/price:
-    post:
-      summary: Calculate SMS price
-      description: Estimate the cost of sending one or more SMS messages.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SmsMessageCollection'
-      responses:
-        '200':
-          description: Pricing returned
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SuccessResponse'
-  /sms/receipts:
-    get:
-      summary: List delivery receipts
-      parameters:
-        - name: page
-          in: query
-          schema:
-            type: integer
-            default: 1
-        - name: limit
-          in: query
-          schema:
-            type: integer
-            default: 15
-            minimum: 15
-            maximum: 100
-      responses:
-        '200':
-          description: Paginated delivery receipts
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SuccessResponse'
-    post:
-      summary: Create a test delivery receipt
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Receipt'
-      responses:
-        '200':
-          description: Test receipt generated
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SuccessResponse'
-  /sms/receipts/{message_id}:
-    get:
-      summary: Get a single SMS receipt
-      parameters:
-        - name: message_id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Single delivery receipt
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SuccessResponse'
-  /sms/receipts-read:
-    put:
-      summary: Mark SMS receipts as read
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                date_before:
-                  type: integer
-                  description: Unix timestamp cutoff for bulk marking
-      responses:
-        '200':
-          description: Receipts marked read
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SuccessResponse'
-  /sms/:
-    post:
-      summary: Create a test inbound SMS
-      description: Generate an inbound test message for webhook verification.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                from:
-                  type: string
-                to:
-                  type: string
-                body:
-                  type: string
-      responses:
-        '200':
-          description: Inbound test created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SuccessResponse'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Username and API key
