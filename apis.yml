@@ -8,7 +8,19 @@ description: >-
   post letters, contacts, accounts, and webhooks, secured with HTTP Basic
   Authentication using a username and API key.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/clicksend-sms.png
 tags:
   - SMS
   - MMS
@@ -24,35 +36,22 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: clicksend-sms:rest-api-v3
-    name: ClickSend REST API v3
-    description: >-
-      REST API v3 for ClickSend covering SMS, MMS, voice broadcasts, email,
-      fax, post letters and postcards, contact lists, accounts, subaccounts,
-      and webhook subscriptions. Authentication uses HTTP Basic Auth with
-      account username and API key. An OpenAPI/Swagger specification is
-      published in the official ClickSend SDK repositories on GitHub.
-    humanURL: https://developers.clicksend.com/docs/
-    baseURL: https://rest.clicksend.com/v3
-    tags:
-      - SMS
-      - MMS
-      - Voice
-      - Email
-      - Fax
-      - Post
-      - Contacts
-      - Basic Auth
-    properties:
-      - type: Documentation
-        url: https://developers.clicksend.com/docs/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/ClickSend/clicksend-go/master/api/swagger.yaml
-      - type: API Portal
-        url: https://developers.clicksend.com/
-      - type: GitHubOrganization
-        url: https://github.com/ClickSend
-
+- aid: clicksend-sms:clicksend-sms-sms-api
+  name: ClickSend SMS Sms API
+  description: The Sms API from ClickSend SMS — 6 operation(s) for sms.
+  humanURL: https://developers.clicksend.com/docs/
+  baseURL: https://rest.clicksend.com/v3
+  tags:
+  - Sms
+  properties:
+  - type: OpenAPI
+    url: openapi/clicksend-sms-sms-api-openapi.yml
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/
+  - type: API Portal
+    url: https://developers.clicksend.com/
+  - type: GitHubOrganization
+    url: https://github.com/ClickSend
 common:
   - type: AgenticAccess
     url: agentic-access/clicksend-sms-agentic-access.yml
