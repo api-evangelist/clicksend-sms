@@ -1,0 +1,14 @@
+{
+  "provider": "clicksend-sms",
+  "sources": [
+    "clicksend-sms-sms-api-openapi.yml"
+  ],
+  "outputs": [
+    "clicksend-sms-sms-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
