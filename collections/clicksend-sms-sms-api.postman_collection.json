@@ -1,0 +1,832 @@
+{
+  "item": [
+    {
+      "id": "8f59291f-ec22-46e4-a103-bf8116032e5e",
+      "name": "Sms",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e7648ea0-7770-450f-9b7b-cac61b8bbc50",
+          "name": "Send SMS messages",
+          "request": {
+            "name": "Send SMS messages",
+            "description": {
+              "content": "Send one or more SMS messages to recipients.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sms",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"source\": \"<string>\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"from_email\": \"<string>\"\n    },\n    {\n      \"source\": \"<string>\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"from_email\": \"<string>\"\n    }\n  ],\n  \"senders\": [\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    }\n  ],\n  \"shorten_urls\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7d8f5af5-2a7f-405f-bdc1-23260bbccc6b",
+              "name": "Messages accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"source\": \"string\",\n      \"from\": \"string\",\n      \"body\": \"string\",\n      \"to\": \"string\",\n      \"schedule\": 2187,\n      \"custom_string\": \"string\",\n      \"country\": \"string\",\n      \"from_email\": \"string\"\n    },\n    {\n      \"source\": \"string\",\n      \"from\": \"string\",\n      \"body\": \"string\",\n      \"to\": \"string\",\n      \"schedule\": 5045,\n      \"custom_string\": \"string\",\n      \"country\": \"string\",\n      \"from_email\": \"string\"\n    }\n  ],\n  \"senders\": [\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    }\n  ],\n  \"shorten_urls\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 9729,\n  \"response_code\": \"string\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72b4f608-fd43-4e4b-8924-0af77b3cd29e",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"source\": \"string\",\n      \"from\": \"string\",\n      \"body\": \"string\",\n      \"to\": \"string\",\n      \"schedule\": 2187,\n      \"custom_string\": \"string\",\n      \"country\": \"string\",\n      \"from_email\": \"string\"\n    },\n    {\n      \"source\": \"string\",\n      \"from\": \"string\",\n      \"body\": \"string\",\n      \"to\": \"string\",\n      \"schedule\": 5045,\n      \"custom_string\": \"string\",\n      \"country\": \"string\",\n      \"from_email\": \"string\"\n    }\n  ],\n  \"senders\": [\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    }\n  ],\n  \"shorten_urls\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1f82cc3d-9852-4cf1-b7e4-36d528a44914",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"source\": \"string\",\n      \"from\": \"string\",\n      \"body\": \"string\",\n      \"to\": \"string\",\n      \"schedule\": 2187,\n      \"custom_string\": \"string\",\n      \"country\": \"string\",\n      \"from_email\": \"string\"\n    },\n    {\n      \"source\": \"string\",\n      \"from\": \"string\",\n      \"body\": \"string\",\n      \"to\": \"string\",\n      \"schedule\": 5045,\n      \"custom_string\": \"string\",\n      \"country\": \"string\",\n      \"from_email\": \"string\"\n    }\n  ],\n  \"senders\": [\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    }\n  ],\n  \"shorten_urls\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fbe25e03-925e-4806-ae47-acfa2203ae03",
+          "name": "Calculate SMS price",
+          "request": {
+            "name": "Calculate SMS price",
+            "description": {
+              "content": "Estimate the cost of sending one or more SMS messages.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sms",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"source\": \"<string>\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"from_email\": \"<string>\"\n    },\n    {\n      \"source\": \"<string>\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"from_email\": \"<string>\"\n    }\n  ],\n  \"senders\": [\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    }\n  ],\n  \"shorten_urls\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4196cd60-1dd6-4556-8bde-ea690fb43ab9",
+              "name": "Pricing returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"source\": \"string\",\n      \"from\": \"string\",\n      \"body\": \"string\",\n      \"to\": \"string\",\n      \"schedule\": 2187,\n      \"custom_string\": \"string\",\n      \"country\": \"string\",\n      \"from_email\": \"string\"\n    },\n    {\n      \"source\": \"string\",\n      \"from\": \"string\",\n      \"body\": \"string\",\n      \"to\": \"string\",\n      \"schedule\": 5045,\n      \"custom_string\": \"string\",\n      \"country\": \"string\",\n      \"from_email\": \"string\"\n    }\n  ],\n  \"senders\": [\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"from\": \"<string>\"\n    }\n  ],\n  \"shorten_urls\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 9729,\n  \"response_code\": \"string\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55ccb1a5-6437-4f7a-92dc-b7e96c13f9c0",
+          "name": "List delivery receipts",
+          "request": {
+            "name": "List delivery receipts",
+            "description": {},
+            "url": {
+              "path": [
+                "sms",
+                "receipts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "15"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "61cc2c40-6ab6-4e5a-a7e9-8bc73c79dd7f",
+              "name": "Paginated delivery receipts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "receipts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "15"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 9729,\n  \"response_code\": \"string\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3af17096-8a61-4883-b761-e3255030fbf9",
+          "name": "Create a test delivery receipt",
+          "request": {
+            "name": "Create a test delivery receipt",
+            "description": {},
+            "url": {
+              "path": [
+                "sms",
+                "receipts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f32c02b-b025-4e51-a2e0-f3acab481a3b",
+              "name": "Test receipt generated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "receipts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 9729,\n  \"response_code\": \"string\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9af62c77-e8de-45b2-9dc8-1695c56cfe95",
+          "name": "Get a single SMS receipt",
+          "request": {
+            "name": "Get a single SMS receipt",
+            "description": {},
+            "url": {
+              "path": [
+                "sms",
+                "receipts",
+                ":message_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "message_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e3200c1-bdee-41c6-b2ec-aca15b143cb6",
+              "name": "Single delivery receipt",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "receipts",
+                    ":message_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "message_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 9729,\n  \"response_code\": \"string\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e722ee8-b516-49d3-a655-9322ffed0cfb",
+          "name": "Mark SMS receipts as read",
+          "request": {
+            "name": "Mark SMS receipts as read",
+            "description": {},
+            "url": {
+              "path": [
+                "sms",
+                "receipts-read"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"date_before\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f39699c8-ff42-4e28-9c63-eb36def49ee8",
+              "name": "Receipts marked read",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "receipts-read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date_before\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 9729,\n  \"response_code\": \"string\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92e0c696-c571-4274-8dd1-599bb32d91c6",
+          "name": "Create a test inbound SMS",
+          "request": {
+            "name": "Create a test inbound SMS",
+            "description": {
+              "content": "Generate an inbound test message for webhook verification.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sms",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"from\": \"<string>\",\n  \"to\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5fe49011-9583-40ae-9055-20fa7c6c1c6b",
+              "name": "Inbound test created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"from\": \"<string>\",\n  \"to\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 9729,\n  \"response_code\": \"string\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rest.clicksend.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d16fbd53-557b-4368-8dac-486daa5b67ae",
+    "name": "ClickSend REST API v3 Sms API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ClickSend REST API v3 for sending SMS messages, calculating SMS pricing,\nfetching delivery receipts, and simulating inbound and delivery webhooks.\nAuthentication uses HTTP Basic Auth with your account username and API key.\n",
+      "type": "text/plain"
+    }
+  }
+}
