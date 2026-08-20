@@ -42,6 +42,8 @@ apis:
   humanURL: https://developers.clicksend.com/docs/
   baseURL: https://rest.clicksend.com/v3
   tags:
+  - SMS
+  tags_raw:
   - Sms
   properties:
   - type: OpenAPI
