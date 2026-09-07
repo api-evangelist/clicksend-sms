@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: ClickSend REST API v3 Sms API
   description: 'ClickSend REST API v3 for sending SMS messages, calculating SMS pricing,
@@ -169,6 +169,35 @@ paths:
       - Sms
 components:
   schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+        response_code:
+          type: string
+        response_msg:
+          type: string
+        data:
+          type: object
+    SmsMessageCollection:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/SmsMessage'
+        senders:
+          type: array
+          items:
+            type: object
+            properties:
+              country:
+                type: string
+              from:
+                type: string
+        shorten_urls:
+          type: boolean
     Receipt:
       type: object
       properties:
@@ -193,35 +222,6 @@ components:
           type: string
         from_email:
           type: string
-    SmsMessageCollection:
-      type: object
-      properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/SmsMessage'
-        senders:
-          type: array
-          items:
-            type: object
-            properties:
-              country:
-                type: string
-              from:
-                type: string
-        shorten_urls:
-          type: boolean
-    SuccessResponse:
-      type: object
-      properties:
-        http_code:
-          type: integer
-        response_code:
-          type: string
-        response_msg:
-          type: string
-        data:
-          type: object
   securitySchemes:
     basicAuth:
       type: http
