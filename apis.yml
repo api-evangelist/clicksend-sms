@@ -1,12 +1,9 @@
 aid: clicksend-sms
 name: ClickSend SMS
-description: >-
-  ClickSend is a global business communications platform for sending and
-  receiving SMS, MMS, voice, email, fax, and physical post via API or web
-  dashboard, with direct carrier routing and a 99.95% uptime SLA. The
-  ClickSend REST API v3 provides endpoints for SMS, MMS, voice, email, fax,
-  post letters, contacts, accounts, and webhooks, secured with HTTP Basic
-  Authentication using a username and API key.
+description: ClickSend is a global business communications platform for sending and receiving SMS, MMS,
+  voice, email, fax, and physical post via API or web dashboard, with direct carrier routing and a 99.95%
+  uptime SLA. The ClickSend REST API v3 provides endpoints for SMS, MMS, voice, email, fax, post letters,
+  contacts, accounts, and webhooks, secured with HTTP Basic Authentication using a username and API key.
 type: Index
 deliveryModel:
   model: saas
@@ -35,22 +32,21 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/clicksend-sms.png
 tags:
-  - SMS
-  - MMS
-  - Messaging
-  - Voice
-  - Email
-  - Fax
-  - Direct Mail
-  - Communications
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/clicksend-sms/refs/heads/main/apis.yml
+- SMS
+- MMS
+- Messaging
+- Voice
+- Email
+- Fax
+- Direct Mail
+- Communications
+url: https://raw.githubusercontent.com/api-evangelist/clicksend-sms/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: clicksend-sms:clicksend-sms-sms-api
-  name: ClickSend SMS Sms API
+  name: ClickSend SMS API
   description: The Sms API from ClickSend SMS — 6 operation(s) for sms.
   humanURL: https://developers.clicksend.com/docs/
   baseURL: https://rest.clicksend.com/v3
@@ -68,32 +64,32 @@ apis:
   - type: GitHubOrganization
     url: https://github.com/ClickSend
 common:
-  - type: AgenticAccess
-    url: agentic-access/clicksend-sms-agentic-access.yml
-  - type: TrustCenter
-    url: security/clicksend-sms-trust-center.yml
-  - type: DomainSecurity
-    url: security/clicksend-sms-domain-security.yml
-  - type: Authentication
-    url: authentication/clicksend-sms-authentication.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/clicksend
-  - type: Website
-    url: https://www.clicksend.com
-  - type: Documentation
-    url: https://developers.clicksend.com/
-  - type: Pricing
-    url: https://www.clicksend.com/en/pricing/
-  - type: Signup
-    url: https://dashboard.clicksend.com/signup
-  - type: Knowledge Base
-    url: https://help.clicksend.com
-  - type: Integrations
-    url: https://integrations.clicksend.com/
-  - type: Blog
-    url: https://blog.clicksend.com
+- type: AgenticAccess
+  url: agentic-access/clicksend-sms-agentic-access.yml
+- type: TrustCenter
+  url: security/clicksend-sms-trust-center.yml
+- type: DomainSecurity
+  url: security/clicksend-sms-domain-security.yml
+- type: Authentication
+  url: authentication/clicksend-sms-authentication.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/clicksend
+- type: Website
+  url: https://www.clicksend.com
+- type: Documentation
+  url: https://developers.clicksend.com/
+- type: Pricing
+  url: https://www.clicksend.com/en/pricing/
+- type: Signup
+  url: https://dashboard.clicksend.com/signup
+- type: Knowledge Base
+  url: https://help.clicksend.com
+- type: Integrations
+  url: https://integrations.clicksend.com/
+- type: Blog
+  url: https://blog.clicksend.com
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 x-parent: clicksend
 x-relationship: product
